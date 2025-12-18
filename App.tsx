@@ -236,10 +236,10 @@ const App: React.FC = () => {
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-display font-black leading-[1.1] md:leading-[1] lg:leading-[0.9] tracking-tighter">
               Abeesh <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Subramaniam</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-indigo-500">Sengottuvel</span>
             </h1>
             <p className={`text-base md:text-lg lg:text-xl leading-relaxed max-w-lg font-medium ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-              Senior Quality Assurance Engineer crafting bulletproof software through automation mastery and meticulous manual precision.
+              Quality Assurance Engineer crafting bulletproof software through automation mastery and meticulous manual precision.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 md:gap-4 pt-4 md:pt-6 w-full sm:w-auto">
               <a 
@@ -272,7 +272,7 @@ const App: React.FC = () => {
             
             <div className={`relative z-10 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] blob-shape overflow-hidden border-4 md:border-6 lg:border-8 ${isDarkMode ? 'border-white/5' : 'border-white'} shadow-2xl transition-all hover:scale-[1.02] duration-1000 group`}>
               <img 
-                src="https://raw.githubusercontent.com/abeeshsengottuvel12/portfolio/main/profile.jpg" 
+                src="Asset/Profile pic.jpg" 
                 alt="Abeesh S" 
                 className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-1000"
                 onError={(e) => {
@@ -493,11 +493,11 @@ const App: React.FC = () => {
             <span className="font-display font-black text-xl tracking-tighter">Abeesh S.</span>
           </div>
           <p className={`text-xs md:text-sm font-bold text-center ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}>
-            &copy; {new Date().getFullYear()} Abeesh Subramaniam. Crafted for perfection.
+            &copy; {new Date().getFullYear()} Abeesh Sengottuvel. Crafted for perfection.
           </p>
           <div className="flex gap-6">
-            <a href="#" className="text-sm hover:text-blue-600 transition-colors font-bold">LinkedIn</a>
-            <a href="#" className="text-sm hover:text-blue-600 transition-colors font-bold">GitHub</a>
+            <a href="https://www.linkedin.com/in/abeesh-s-b35271228/" className="text-sm hover:text-blue-600 transition-colors font-bold">LinkedIn</a>
+            <a href="https://github.com/AbeeshSengottuvel" className="text-sm hover:text-blue-600 transition-colors font-bold">GitHub</a>
           </div>
         </div>
       </footer>
