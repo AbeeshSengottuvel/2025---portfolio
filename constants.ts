@@ -7,38 +7,39 @@ export const RESUME_URL = "https://github.com/AbeeshSengottuvel/Portfolio/blob/m
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    title: "Programming Languages",
+    title: "Programming & Test Development Languages",
     icon: "code",
     skills: [
       { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
-      { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
       { name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" }
     ]
   },
   {
-    title: "Automation & API Testing",
+    title: "Test Automation & API Engineering",
     icon: "build",
     skills: [
       { name: "Selenium", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" },
-      { name: "Postman" },
+      { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
       { name: "REST API" },
-      { name: "SOAP API" },
-      { name: "NUnit" }
+      { name: "TestNG" },
+      { name: "Cucumber" },
+      { name: "NUnit"}
     ]
   },
   {
-    title: "Tools & DevOps",
+    title: "Test Infrastructure & CI/CD Tooling",
     icon: "database",
     skills: [
-      { name: "Maven", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" },
-      { name: "Jenkins", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" },
-      { name: "QTest" },
+      
+     { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" },
+      { name: "QTest",icon:"https://raw.githubusercontent.com/devicons/devicon/54cfe13ac10eaa1ef817a343ab0a9437eb3c2e08/icons/qtest/qtest-original.svg" },
       { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-      { name: "Azure", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" }
+       { name: "Jenkins", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jenkins/jenkins-original.svg" },
+      { name: "Maven", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/maven/maven-original.svg" }
     ]
   },
   {
-    title: "Development Environment",
+    title: "Development & Debugging Environment",
     icon: "psychology",
     skills: [
       { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
@@ -46,14 +47,14 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     ]
   },
   {
-    title: "Soft Skills",
+    title: "Quality Engineering & Delivery Practices",
     icon: "groups",
     skills: [
-      { name: "Manual Testing" },
-      { name: "Agile Sprints" },
-      { name: "Regression Testing" },
-      { name: "Project Management" },
-      { name: "Team Player" }
+      { name: "Test Case Design & Execution" },
+      { name: "Agile Collaboration" },
+      { name: "Sprint-Based QA Delivery" },
+      { name: "Defect Analysis & Reporting" },
+      { name: "Cross-Functional Teamwork" }
     ]
   }
 ];
