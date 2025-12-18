@@ -272,7 +272,7 @@ const App: React.FC = () => {
             
             <div className={`relative z-10 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] blob-shape overflow-hidden border-4 md:border-6 lg:border-8 ${isDarkMode ? 'border-white/5' : 'border-white'} shadow-2xl transition-all hover:scale-[1.02] duration-1000 group`}>
               <img 
-                src="https://github.com/AbeeshSengottuvel/2025---portfolio/blob/main/Asset/Profile%20pic.jpg" 
+                src="https://raw.githubusercontent.com/AbeeshSengottuvel/2025---portfolio/main/Asset/Profile%20pic.jpg" 
                 alt="Abeesh S" 
                 className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-1000"
                 onError={(e) => {
