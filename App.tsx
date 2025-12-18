@@ -20,9 +20,12 @@ import {
   Moon,
   Sun,
   ChevronRight,
-  Terminal
+  Terminal,
+  Linkedin,
+  Github,
+  Instagram
 } from 'lucide-react';
-import { SKILL_CATEGORIES, EXPERIENCES, EDUCATION_LIST, RESUME_URL } from './constants';
+import { SKILL_CATEGORIES, EXPERIENCES, EDUCATION_LIST, RESUME_URL, SOCIAL_LINKS } from './constants';
 
 const CloudBackground = ({ isDarkMode }: { isDarkMode: boolean }) => {
   return (
@@ -232,7 +235,7 @@ const App: React.FC = () => {
           >
             <div className="flex items-center gap-2 text-blue-500 font-black tracking-[0.15em] uppercase text-[9px] md:text-[10px] bg-blue-500/10 px-3 py-1.5 md:px-4 md:py-2 rounded-full border border-blue-500/20">
               <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping"></span>
-              Available for new projects
+              Available for New Opportunities
             </div>
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-display font-black leading-[1.1] md:leading-[1] lg:leading-[0.9] tracking-tighter">
               Abeesh <br className="hidden sm:block" />
@@ -325,6 +328,7 @@ const App: React.FC = () => {
                     {category.icon === 'psychology' && <Cpu size={20} className="md:size-[24px]" />}
                     {category.icon === 'build' && <Wrench size={20} className="md:size-[24px]" />}
                     {category.icon === 'groups' && <Users size={20} className="md:size-[24px]" />}
+                    {category.icon === 'brain' && <Cpu size={20} className="md:size-[24px]" />}
                   </div>
                   <h3 className="text-lg md:text-xl lg:text-2xl font-black font-display tracking-tight">{category.title}</h3>
                 </div>
@@ -418,68 +422,63 @@ const App: React.FC = () => {
         </section>
 
         {/* Contact Section */}
-        <section id="contact" className="py-20 scroll-mt-20">
-          <div className={`p-8 md:p-12 lg:p-16 rounded-[2.5rem] md:rounded-[4rem] border relative overflow-hidden ${isDarkMode ? 'bg-white/5 border-white/5' : 'bg-white border-black/5 shadow-2xl'}`}>
-            <div className="absolute top-0 right-0 w-64 h-64 md:w-96 md:h-96 bg-blue-600/20 blur-[80px] md:blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2"></div>
+        <section id="contact" className="py-24 scroll-mt-20">
+          <motion.div 
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className={`p-10 md:p-16 lg:p-20 rounded-[3.5rem] md:rounded-[5rem] border shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] relative overflow-hidden ${isDarkMode ? 'bg-[#1a1c22]/60 border-white/5' : 'bg-white border-black/5'}`}
+          >
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-blue-600/10 blur-[100px] rounded-full translate-x-1/2 -translate-y-1/2"></div>
             
-            <div className="relative z-10 grid lg:grid-cols-[1fr_1.4fr] gap-12 md:gap-16 items-start">
-              <div className="flex flex-col gap-8 md:gap-10">
-                <div className="text-left">
-                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-black mb-3 md:mb-5 tracking-tighter">Let's Connect</h2>
-                  <p className={`text-base md:text-lg lg:text-xl font-medium max-w-sm ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
-                    Ready to elevate your software quality? Let's discuss your next project.
-                  </p>
-                </div>
-
-                <div className="space-y-5 md:space-y-6 flex flex-col items-start w-full">
-                  {[
-                    { icon: <Mail size={20} />, value: "abeeshsengottuvel12@gmail.com", link: "mailto:abeeshsengottuvel12@gmail.com" },
-                    { icon: <Phone size={20} />, value: "+91 9047722626", link: "tel:+919047722626" },
-                    { icon: <MapPin size={20} />, value: "Chennai, India", link: null }
-                  ].map((item, idx) => (
-                    <div key={idx} className="flex items-center gap-4 md:gap-5 group w-full">
-                      <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-lg shadow-blue-600/20">
-                        {item.icon}
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        {item.link ? (
-                          <a href={item.link} className="text-sm md:text-base lg:text-lg font-bold hover:text-blue-600 transition-colors break-words">{item.value}</a>
-                        ) : (
-                          <span className="text-sm md:text-base lg:text-lg font-bold">{item.value}</span>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
+            <div className="relative z-10 max-w-6xl mx-auto">
+              <div className="mb-16 md:mb-20 text-center lg:text-left">
+                <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tighter leading-none mb-6">Let's Connect</h2>
+                <p className={`text-xl md:text-2xl font-medium max-w-2xl leading-relaxed ${isDarkMode ? 'text-slate-400' : 'text-slate-500'}`}>
+                  Ready to elevate your software quality? Let's discuss your next project or professional opportunity.
+                </p>
               </div>
 
-              <motion.form 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                className="space-y-4 md:space-y-6 flex flex-col items-start w-full"
-              >
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-5 w-full">
-                  <div className="space-y-1.5">
-                    <label className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Name</label>
-                    <input placeholder="Name" className={`w-full px-5 md:px-6 py-3.5 md:py-4 rounded-xl md:rounded-2xl border transition-all outline-none focus:ring-4 focus:ring-blue-600/20 focus:border-blue-600 font-bold ${isDarkMode ? 'bg-black/40 border-white/5' : 'bg-slate-50 border-black/5'}`} />
-                  </div>
-                  <div className="space-y-1.5">
-                    <label className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Email</label>
-                    <input placeholder="Email" className={`w-full px-5 md:px-6 py-3.5 md:py-4 rounded-xl md:rounded-2xl border transition-all outline-none focus:ring-4 focus:ring-blue-600/20 focus:border-blue-600 font-bold ${isDarkMode ? 'bg-black/40 border-white/5' : 'bg-slate-50 border-black/5'}`} />
-                  </div>
-                </div>
-                <div className="space-y-1.5 w-full">
-                  <label className="text-[9px] md:text-[10px] font-black uppercase tracking-widest text-slate-500 ml-2">Message</label>
-                  <textarea rows={4} placeholder="Tell me about your project..." className={`w-full px-5 md:px-6 py-3.5 md:py-4 rounded-xl md:rounded-2xl border transition-all outline-none focus:ring-4 focus:ring-blue-600/20 focus:border-blue-600 font-bold resize-none ${isDarkMode ? 'bg-black/40 border-white/5' : 'bg-slate-50 border-black/5'}`}></textarea>
-                </div>
-                <button className="w-full md:w-auto md:min-w-[240px] bg-blue-600 hover:bg-blue-500 text-white font-black py-3.5 md:py-4.5 px-8 rounded-xl md:rounded-2xl transition-all flex items-center justify-center gap-3 active:scale-95 text-base md:text-lg shadow-xl shadow-blue-600/40 relative overflow-hidden group">
-                  <span className="relative z-10 font-bold">Send Message</span>
-                  <Send size={18} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                </button>
-              </motion.form>
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-x-12 md:gap-y-16">
+                {[
+                  { icon: <Mail size={24} />, value: "abeeshsengottuvel12@gmail.com", label: "Email", href: SOCIAL_LINKS.email },
+                  { icon: <Phone size={24} />, value: "+91 9047722626", label: "Phone", href: SOCIAL_LINKS.phone },
+                  { icon: <MapPin size={24} />, value: "Chennai, India", label: "Location" },
+                  { icon: <Linkedin size={24} />, value: "Abeesh S.", label: "LinkedIn", href: SOCIAL_LINKS.linkedin },
+                  { icon: <Github size={24} />, value: "AbeeshSengottuvel", label: "GitHub", href: SOCIAL_LINKS.github },
+                  { icon: <Instagram size={24} />, value: "@abeesh", label: "Instagram", href: SOCIAL_LINKS.instagram }
+                ].map((item, idx) => (
+                  <motion.div 
+                    key={idx}
+                    whileHover={{ scale: 1.03 }}
+                    className="group min-w-0"
+                  >
+                    {item.href ? (
+                      <a href={item.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-6 overflow-hidden">
+                        <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-2xl shadow-blue-600/40 group-hover:bg-blue-500 transition-all duration-300">
+                          {item.icon}
+                        </div>
+                        <div className="flex-1 min-w-0 overflow-hidden">
+                          <p className={`text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-1.5 transition-colors ${isDarkMode ? 'text-slate-500 group-hover:text-blue-400' : 'text-slate-400 group-hover:text-blue-600'}`}>{item.label}</p>
+                          <span className="text-lg md:text-xl font-black block break-all leading-tight">{item.value}</span>
+                        </div>
+                      </a>
+                    ) : (
+                      <div className="flex items-center gap-6 overflow-hidden">
+                        <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-2xl shadow-blue-600/40">
+                          {item.icon}
+                        </div>
+                        <div className="flex-1 min-w-0 overflow-hidden">
+                          <p className={`text-[10px] md:text-xs font-black uppercase tracking-[0.2em] mb-1.5 ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}>{item.label}</p>
+                          <span className="text-lg md:text-xl font-black block break-all leading-tight">{item.value}</span>
+                        </div>
+                      </div>
+                    )}
+                  </motion.div>
+                ))}
+              </div>
             </div>
-          </div>
+          </motion.div>
         </section>
 
       </main>
@@ -490,14 +489,13 @@ const App: React.FC = () => {
             <div className="w-9 h-9 md:w-10 md:h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white">
               <Terminal size={18} className="md:size-20" />
             </div>
-            <span className="font-display font-black text-xl tracking-tighter">Abeesh S.</span>
+            <span className="font-display font-black text-xl md:text-2xl tracking-tighter group-hover:text-blue-500 transition-colors">Abeesh S.</span>
           </div>
           <p className={`text-xs md:text-sm font-bold text-center ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}>
             &copy; {new Date().getFullYear()} Abeesh Sengottuvel. Crafted for perfection.
           </p>
           <div className="flex gap-6">
-            <a href="https://www.linkedin.com/in/abeesh-s-b35271228/" className="text-sm hover:text-blue-600 transition-colors font-bold">LinkedIn</a>
-            <a href="https://github.com/AbeeshSengottuvel" className="text-sm hover:text-blue-600 transition-colors font-bold">GitHub</a>
+            <a href="#" className="text-sm hover:text-blue-600 transition-colors font-bold font-display font-black text-xl md:text-2xl tracking-tighter group-hover:text-blue-500 transition-colors">Top</a>
           </div>
         </div>
       </footer>
