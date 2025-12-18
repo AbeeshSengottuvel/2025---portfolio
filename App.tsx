@@ -497,7 +497,7 @@ const App: React.FC = () => {
           </p>
           <div className="group flex gap-6 items-center cursor-pointer">
         <a
-        href="#top"
+        
         className="group w-auto px-5 h-14 md:h-16 rounded-xl md:rounded-2xl
                   bg-blue-600/10 flex items-center gap-2 text-blue-600
                   font-display font-black text-xl md:text-2xl tracking-tighter
