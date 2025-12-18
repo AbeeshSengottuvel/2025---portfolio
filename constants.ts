@@ -1,7 +1,7 @@
 import { SkillCategory, Experience, Education } from "./types";
 
 export const RESUME_URL =
-  "https://raw.githubusercontent.com/AbeeshSengottuvel/2025---portfolio/main/Asset/Abeesh%20S.pdf?raw=true"; // Placeholder - replace with your actual hosted PDF link
+  "https://raw.githubusercontent.com/AbeeshSengottuvel/2025---portfolio/main/Asset/Abeesh%20S.pdf"; // Placeholder - replace with your actual hosted PDF link
 
 export const SOCIAL_LINKS = {
   linkedin: "https://www.linkedin.com/in/abeesh-s-b35271228/",
