@@ -23,7 +23,8 @@ import {
   Terminal,
   Linkedin,
   Github,
-  Instagram
+  Instagram,
+  ArrowUp
 } from 'lucide-react';
 import { SKILL_CATEGORIES, EXPERIENCES, EDUCATION_LIST, RESUME_URL, SOCIAL_LINKS } from './constants';
 
@@ -494,9 +495,25 @@ const App: React.FC = () => {
           <p className={`text-xs md:text-sm font-bold text-center ${isDarkMode ? 'text-slate-500' : 'text-slate-400'}`}>
             &copy; {new Date().getFullYear()} Abeesh Sengottuvel. Crafted for perfection.
           </p>
-          <div className="flex gap-6">
-            <a href="#" className="text-sm hover:text-blue-600 transition-colors font-bold font-display font-black text-xl md:text-2xl tracking-tighter group-hover:text-blue-500 transition-colors">Top</a>
-          </div>
+          <div className="group flex gap-6 items-center cursor-pointer">
+        <a
+        href="#top"
+        className="group w-auto px-5 h-14 md:h-16 rounded-xl md:rounded-2xl
+                  bg-blue-600/10 flex items-center gap-2 text-blue-600
+                  font-display font-black text-xl md:text-2xl tracking-tighter
+                  transition-all duration-300 hover:-translate-y-1 hover:text-blue-600"
+      >
+        <ArrowUp
+          size={28}
+          className="transition-transform duration-300 group-hover:-translate-y-1"
+        />
+        <span>Top</span>
+      </a>
+
+
+  
+</div>
+
         </div>
       </footer>
     </div>
