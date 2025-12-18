@@ -3,6 +3,8 @@ import { SkillCategory, Experience, Education } from './types';
 
 export const RESUME_URL = "https://github.com/AbeeshSengottuvel/Portfolio/blob/main/resume/Abeesh%20S.pdf"; // Placeholder - replace with your actual hosted PDF link
 
+
+
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
     title: "Programming Languages",

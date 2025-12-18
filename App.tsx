@@ -292,7 +292,7 @@ const App: React.FC = () => {
               </div>
               <div className="text-left">
                 <p className="text-[7px] md:text-[8px] lg:text-[10px] uppercase tracking-widest font-black text-slate-500 mb-0.5">Experience</p>
-                <p className="text-sm md:text-lg lg:text-2xl font-display font-black leading-none">1+ Year</p>
+                <p className="text-sm md:text-lg lg:text-2xl font-display font-black leading-none">1.5+ Year</p>
               </div>
             </motion.div>
           </motion.div>
