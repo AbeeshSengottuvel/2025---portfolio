@@ -272,11 +272,11 @@ const App: React.FC = () => {
             
             <div className={`relative z-10 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-[420px] lg:h-[420px] blob-shape overflow-hidden border-4 md:border-6 lg:border-8 ${isDarkMode ? 'border-white/5' : 'border-white'} shadow-2xl transition-all hover:scale-[1.02] duration-1000 group`}>
               <img 
-                src="https://raw.githubusercontent.com/AbeeshSengottuvel/2025---portfolio/main/Asset/Profile%20pic.jpg" 
+                src="https://github.com/AbeeshSengottuvel/2025---portfolio/blob/main/Asset/Profile%20pic.jpg?raw=true" 
                 alt="Abeesh S" 
                 className="w-full h-full object-cover grayscale-[15%] group-hover:grayscale-0 transition-all duration-1000"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = "https://picsum.photos/1000/1000?random=1";
+                  (e.target as HTMLImageElement).src="https://github.com/AbeeshSengottuvel/2025---portfolio/blob/main/Asset/Profile%20pic.jpg?raw=true";
                 }}
               />
             </div>
@@ -433,7 +433,7 @@ const App: React.FC = () => {
 
                 <div className="space-y-5 md:space-y-6 flex flex-col items-start w-full">
                   {[
-                    { icon: <Mail size={20} />, value: "abeeshsengottuvel112@gmail.com", link: "mailto:abeeshsengottuvel112@gmail.com" },
+                    { icon: <Mail size={20} />, value: "abeeshsengottuvel12@gmail.com", link: "mailto:abeeshsengottuvel12@gmail.com" },
                     { icon: <Phone size={20} />, value: "+91 9047722626", link: "tel:+919047722626" },
                     { icon: <MapPin size={20} />, value: "Chennai, India", link: null }
                   ].map((item, idx) => (
