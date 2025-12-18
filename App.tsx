@@ -598,11 +598,14 @@ const App: React.FC = () => {
         </section>
 
         {/* Contact Section */}
+
         <section id="contact" className="py-24 scroll-mt-20">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            // 2. Apply Container Variants
+            variants={containerVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }} // Triggers when 100px of the section is visible
             className={`p-6 sm:p-10 md:p-16 lg:p-20 rounded-[3.5rem] md:rounded-[5rem] border shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] relative overflow-hidden max-w-full ${
               isDarkMode
                 ? "bg-[#1a1c22]/60 border-white/5"
@@ -615,24 +618,28 @@ const App: React.FC = () => {
             <div className="relative z-10 max-w-6xl mx-auto">
               {/* Header */}
               <div className="mb-16 md:mb-20 text-center lg:text-left">
-                <h2 className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tighter leading-none mb-6">
+                {/* 3. Apply Item Variants to Header Elements */}
+                <motion.h2
+                  variants={itemVariants}
+                  className="text-5xl md:text-7xl lg:text-8xl font-display font-black tracking-tighter leading-none mb-6"
+                >
                   Let&apos;s Connect
-                </h2>
-                <p
+                </motion.h2>
+                <motion.p
+                  variants={itemVariants}
                   className={`text-xl md:text-2xl font-medium max-w-2xl leading-relaxed ${
                     isDarkMode ? "text-slate-400" : "text-slate-500"
                   }`}
                 >
                   Ready to elevate your software quality? Let&apos;s discuss
                   your next project or professional opportunity.
-                </p>
+                </motion.p>
               </div>
 
               {/* Contact Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 sm:gap-x-8 md:gap-x-12 gap-y-6 sm:gap-y-8 md:gap-y-10">
                 {[
                   {
-                    // Updated size to 28 to match Education section
                     icon: <Mail size={28} />,
                     label: "Email",
                     value: "abeeshsengottuvel12@gmail.com",
@@ -668,18 +675,30 @@ const App: React.FC = () => {
                     href: SOCIAL_LINKS.instagram,
                   },
                 ].map((item, idx) => (
+                  // 4. Apply Item Variants to each Grid Card
+                  // Note: We do NOT use initial/whileInView here because the parent controls it via staggerChildren
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, y: 12 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    variants={itemVariants}
                     className="flex items-start gap-4 sm:gap-5"
                   >
-                    {/* UPDATED ICON STYLE */}
-                    {/* Changed from bg-blue-600/text-white to bg-blue-600/10 and text-blue-600 */}
-                    <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-blue-600/10 flex items-center justify-center text-blue-600 shrink-0">
+                    {/* Animated Icon Wrapper */}
+                    <motion.div
+                      whileHover={{
+                        scale: 1.15,
+                        rotate: 10,
+                        backgroundColor: "rgba(37, 99, 235, 0.2)",
+                      }}
+                      whileTap={{ scale: 0.9 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 400,
+                        damping: 17,
+                      }}
+                      className="w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-blue-600/10 flex items-center justify-center text-blue-600 shrink-0 cursor-pointer transition-colors"
+                    >
                       {item.icon}
-                    </div>
+                    </motion.div>
 
                     {/* Text */}
                     <div className="flex flex-col min-w-0 pt-1">
@@ -687,7 +706,6 @@ const App: React.FC = () => {
                         {item.label}
                       </p>
 
-                      {/* Removed 'truncate' from below items so text wraps */}
                       {item.href ? (
                         <a
                           href={item.href}
@@ -743,6 +761,7 @@ const App: React.FC = () => {
           </p>
           <div className="group flex gap-6 items-center cursor-pointer">
             <a
+              href="#home"
               className="group w-auto px-5 h-14 md:h-16 rounded-xl md:rounded-2xl
                   bg-blue-600/10 flex items-center gap-2 text-blue-600
                   font-display font-black text-xl md:text-2xl tracking-tighter
