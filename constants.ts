@@ -108,11 +108,26 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
     title: "Quality Engineering & Delivery Practices",
     icon: "groups",
     skills: [
-      { name: "Test Case Design & Execution" },
-      { name: "Agile Collaboration" },
-      { name: "Sprint-Based QA Delivery" },
-      { name: "Defect Analysis & Reporting" },
-      { name: "Cross-Functional Teamwork" },
+      {
+        name: "Test Case Design & Execution",
+        icon: "https://cdn-icons-png.flaticon.com/256/1055/1055644.png",
+      },
+      {
+        name: "Agile Collaboration",
+        icon: "https://cdn-icons-png.flaticon.com/256/5619/5619211.png",
+      },
+      {
+        name: "Sprint-Based QA Delivery",
+        icon: "https://cdn-icons-png.flaticon.com/256/3239/3239147.png",
+      },
+      {
+        name: "Defect Analysis & Reporting",
+        icon: "https://cdn-icons-png.flaticon.com/256/2906/2906206.png",
+      },
+      {
+        name: "Cross-Functional Teamwork",
+        icon: "https://cdn-icons-png.flaticon.com/256/1189/1189132.png",
+      },
     ],
   },
 ];
