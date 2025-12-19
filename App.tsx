@@ -29,6 +29,7 @@ import {
   Github,
   Instagram,
   ArrowUp,
+  Brain,
 } from "lucide-react";
 import {
   SKILL_CATEGORIES,
@@ -432,7 +433,7 @@ const App: React.FC = () => {
                       <Users size={20} className="md:size-[24px]" />
                     )}
                     {category.icon === "brain" && (
-                      <Cpu size={20} className="md:size-[24px]" />
+                      <Brain size={20} className="md:size-[24px]" />
                     )}
                   </div>
                   <h3 className="text-lg md:text-xl lg:text-2xl font-black font-display tracking-tight">
@@ -564,13 +565,28 @@ const App: React.FC = () => {
                     : "bg-white border-black/5"
                 }`}
               >
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-blue-600/10 flex items-center justify-center text-blue-600 shrink-0">
+                {/* Updated Icon Wrapper with Animation */}
+                <motion.div
+                  whileHover={{
+                    scale: 1.15,
+                    rotate: 10,
+                    backgroundColor: "rgba(37, 99, 235, 0.2)",
+                  }}
+                  whileTap={{ scale: 0.9 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 400,
+                    damping: 17,
+                  }}
+                  className="w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-blue-600/10 flex items-center justify-center text-blue-600 shrink-0 cursor-pointer transition-colors"
+                >
                   {edu.icon === "school" ? (
                     <GraduationCap size={28} />
                   ) : (
                     <BadgeCheck size={28} />
                   )}
-                </div>
+                </motion.div>
+
                 <div className="text-center sm:text-left flex-1">
                   <h3 className="text-lg md:text-xl font-bold font-display">
                     {edu.degree}
@@ -598,7 +614,6 @@ const App: React.FC = () => {
         </section>
 
         {/* Contact Section */}
-
         <section id="contact" className="py-24 scroll-mt-20">
           <motion.div
             // 2. Apply Container Variants
@@ -675,30 +690,37 @@ const App: React.FC = () => {
                     href: SOCIAL_LINKS.instagram,
                   },
                 ].map((item, idx) => (
-                  // 4. Apply Item Variants to each Grid Card
-                  // Note: We do NOT use initial/whileInView here because the parent controls it via staggerChildren
                   <motion.div
                     key={idx}
                     variants={itemVariants}
                     className="flex items-start gap-4 sm:gap-5"
                   >
-                    {/* Animated Icon Wrapper */}
-                    <motion.div
-                      whileHover={{
-                        scale: 1.15,
-                        rotate: 10,
-                        backgroundColor: "rgba(37, 99, 235, 0.2)",
-                      }}
-                      whileTap={{ scale: 0.9 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 400,
-                        damping: 17,
-                      }}
-                      className="w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-blue-600/10 flex items-center justify-center text-blue-600 shrink-0 cursor-pointer transition-colors"
-                    >
-                      {item.icon}
-                    </motion.div>
+                    {/* Updated Icon Section: Now triggers link if href exists */}
+                    {item.href ? (
+                      <motion.a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{
+                          scale: 1.15,
+                          rotate: 10,
+                          backgroundColor: "rgba(37, 99, 235, 0.2)",
+                        }}
+                        whileTap={{ scale: 0.9 }}
+                        transition={{
+                          type: "spring",
+                          stiffness: 400,
+                          damping: 17,
+                        }}
+                        className="w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-blue-600/10 flex items-center justify-center text-blue-600 shrink-0 cursor-pointer transition-colors"
+                      >
+                        {item.icon}
+                      </motion.a>
+                    ) : (
+                      <motion.div className="w-14 h-14 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-blue-600/10 flex items-center justify-center text-blue-600 shrink-0">
+                        {item.icon}
+                      </motion.div>
+                    )}
 
                     {/* Text */}
                     <div className="flex flex-col min-w-0 pt-1">
